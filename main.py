@@ -169,12 +169,30 @@
 # print(is_leap(year))
 
 
-str="HellO wOrld"
-rank=[]
-i=0
-capitals="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-for char in str:
-  if char in capitals:
-    rank.append(i)
-  i+=1
-print(rank)
+# str="HellO wOrld"
+# rank=[]
+# i=0
+# capitals="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+# for char in str:
+#   if char in capitals:
+#     rank.append(i)
+#   i+=1
+# print(rank)
+
+
+# for i in range(2,101):
+#   sum=0
+#   for j in range(1,i):
+#     if i%j==0:
+#       sum+=j
+#   if sum==i:
+#     print(i)
+
+arr1=[[23,48,92],[8,5,6]]
+arr2=[[40,2],[60,4],[60,6]]
+result=[[0,0],[0,0]]
+for i in range(len(arr1)):
+  for j in range(len(arr2[0])):
+    for k in range(len(arr2)):
+      result[i][j]+=arr1[i][k]*arr2[k][j]
+print(result)
