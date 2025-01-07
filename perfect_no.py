@@ -6,4 +6,3 @@ for i in range(2,101):
       sum+=j
   if sum==i:
     print(i)
-git clone https://github.com/<your-username>/<your-repository>.git
