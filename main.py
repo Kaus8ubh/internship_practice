@@ -197,35 +197,135 @@
 #       result[i][j]+=arr1[i][k]*arr2[k][j]
 # print(result)
 
-ones=["", "one", "two", "three", "four", "five", "six", "seven","eight", "nine"]
-teens=["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
-tens=["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty","ninety"]
-def no_to_word(no):
-  if no==0:
-    return "zero"
-  word=""
-  if no >= 100000:
-    word += ones[no//100000] + " lakh "
-  no %= 100000
-  if (no//1000 >= 10 and no//1000 <= 19):
-    word += teens[no//1000] + " thousand "
-  if no >= 20000:
-    word += tens[no//10000]
-  no %= 10000
-  if no >= 1000:
-    word += ones[no//1000] + " thousand "
-  no%=1000
-  if no >= 100:
-    word += ones[no//100] + " hundred "
-  no%=100
-  if no >= 10 and no<=19:
-    word += teens[no-10]
-  if no >= 20:
-    word += tens[no//10] 
-  no%=10
-  if no>=0:
-    word += ones[no]
+# ones=["", "one", "two", "three", "four", "five", "six", "seven","eight", "nine"]
+# teens=["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+# tens=["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty","ninety"]
+# def no_to_word(no):
+#   if no==0:
+#     return "zero"
+#   word=""
+#   if no >= 100000:
+#     word += ones[no//100000] + " lakh "
+#   no %= 100000
+#   if (no//1000 >= 10 and no//1000 <= 19):
+#     word += teens[no//1000] + " thousand "
+#   if no >= 20000:
+#     word += tens[no//10000]
+#   no %= 10000
+#   if no >= 1000:
+#     word += ones[no//1000] + " thousand "
+#   no%=1000
+#   if no >= 100:
+#     word += ones[no//100] + " hundred "
+#   no%=100
+#   if no >= 10 and no<=19:
+#     word += teens[no-10]
+#   if no >= 20:
+#     word += tens[no//10] 
+#   no%=10
+#   if no>=0:
+#     word += ones[no]
 
-  return word
+#   return word
 
-print(no_to_word(321967))
+# print(no_to_word(321967))
+
+
+# class Tree:
+#   def __init__(self, val=None):
+#     self.value = val
+#     if self.value:
+#       self.left=Tree()
+#       self.right=Tree()
+#     else:
+#       self.left = None
+#       self.right = None
+
+#   def is_empty(self):
+#     return self.value == None
+
+#   def insert(self, data):
+#     if self.is_empty():
+#       self.value = data
+#       self.left=Tree()
+#       self.right=Tree()
+#       return
+
+#     elif data > self.value:
+#       self.right.insert(data)
+
+#     elif data < self.value:
+#       self.left.insert(data)
+
+#     elif data == self.value:
+#       return
+
+# t=Tree(10)
+# t.insert(5)
+# t.insert(15)  
+# t.insert(3)
+# t.insert(7)
+# t.insert(12)
+# t.insert(18)
+# t.insert(4)
+
+
+class Tree:
+  def __init__(self, val=None):
+    self.value = val
+    if self.value:
+      self.left=Tree()
+      self.right=Tree()
+    else:
+      self.left = None
+      self.right = None
+
+  def is_empty(self):
+    return self.value == None
+
+  def insert(self, data):
+    if self.is_empty():
+      self.value = data
+      self.left=Tree()
+      self.right=Tree()
+      return
+
+    elif data > self.value:
+      self.right.insert(data)
+
+    elif data < self.value:
+      self.left.insert(data)
+
+    elif data == self.value:
+      return
+
+  def find(self, val):
+    if self.is_empty():
+      print("not found")
+
+    elif val == self.value:
+      print("found")
+
+    elif val > self.value:
+      return self.right.find(val)
+
+    elif val < self.value:
+      return self.left.find(val)
+
+  def in_order(self):
+    if self.is_empty():
+      return []
+    else:
+      return self.left.in_order() + [self.value] + self.right.in_order()
+
+t=Tree(10)
+t.insert(5)
+t.insert(15)  
+t.insert(3)
+t.insert(7)
+t.insert(12)
+t.insert(18)
+t.insert(4)
+
+t.find(18)
+print(t.in_order())
