@@ -270,62 +270,23 @@
 # t.insert(4)
 
 
-class Tree:
-  def __init__(self, val=None):
-    self.value = val
-    if self.value:
-      self.left=Tree()
-      self.right=Tree()
+# 
+
+para="Geography is the study of places and the relationships between people and their environments. Geographers explore both the physical properties of Earth’s surface and the human societies spread across it. They also examine how human culture interacts with the natural environment and the way that locations and places can have an impact on people. Geography seeks to understand where things are found, why they are there, and how they develop and change over time.Ancient GeographersThe term geography was coined by the Greek scholar Eratosthenes in the third century B.C.E. In Greek, geo- means “earth” and -graphy means “to write.” Using geography, Eratosthenes and other Greeks developed an understanding of where their homeland was located in relation to other places, what their own and other places were like, and how people and environments were distributed. These concerns have been central to geography ever since.Of course, the Greeks  China. This period of time between the 15th and 17th centuries is known in the West as the Age of Exploration or the Age of Discovery.With the dawn of the Age of Discovery, the study of geography regained popularity in Europe. The invention of the printing press in the mid-1400s helped spread geographic knowledge by making maps and charts widely available. Improvements in shipbuilding and navigation facilitated more exploring, greatly improving the accuracy of maps and geographic information.Greater geographic understanding allowed European powers to extend their global influence. During the Age of Discovery, European nations established colonies around the world. Improved transportation, communication and navigational technology allowed countries such as the United Kihich nations trade with other nations, and what resources are exchanged. Philosophers analyze the responsibility people have to take care of Earth.Emergence of Modern GeographySome people have trouble understanding the complete scope of the discipline of geography because geography is interdisciplinary, meaning that it is not defined by one particular topic. Instead, geography is concerned with many different topics—people, culture, politics, settlements, plants, landforms and much more. Geography asks spatial questions—how and why things are distributed or arranged in particular ways on Earth’s surface. It looks at these differe"
+
+def occurance_of_words(para):
+  dict={}
+  drops=["A","a","the","The","is","Is","of","Of","and",
+         "And","to","To","in","In","for","For","on","are",
+         "On","with","With","that","That","by","By","this","They","These"," "]
+  words=para.split()
+  for word in words:
+    if word in drops:
+      continue
+    if word in dict:
+      dict[word]+=1
     else:
-      self.left = None
-      self.right = None
+      dict[word]=1
+  return dict
 
-  def is_empty(self):
-    return self.value == None
-
-  def insert(self, data):
-    if self.is_empty():
-      self.value = data
-      self.left=Tree()
-      self.right=Tree()
-      return
-
-    elif data > self.value:
-      self.right.insert(data)
-
-    elif data < self.value:
-      self.left.insert(data)
-
-    elif data == self.value:
-      return
-
-  def find(self, val):
-    if self.is_empty():
-      print("not found")
-
-    elif val == self.value:
-      print("found")
-
-    elif val > self.value:
-      return self.right.find(val)
-
-    elif val < self.value:
-      return self.left.find(val)
-
-  def in_order(self):
-    if self.is_empty():
-      return []
-    else:
-      return self.left.in_order() + [self.value] + self.right.in_order()
-
-t=Tree(10)
-t.insert(5)
-t.insert(15)  
-t.insert(3)
-t.insert(7)
-t.insert(12)
-t.insert(18)
-t.insert(4)
-
-t.find(18)
-print(t.in_order())
+print(occurance_of_words(para))
