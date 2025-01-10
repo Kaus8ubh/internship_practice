@@ -274,19 +274,183 @@
 
 para="Geography is the study of places and the relationships between people and their environments. Geographers explore both the physical properties of Earth’s surface and the human societies spread across it. They also examine how human culture interacts with the natural environment and the way that locations and places can have an impact on people. Geography seeks to understand where things are found, why they are there, and how they develop and change over time.Ancient GeographersThe term geography was coined by the Greek scholar Eratosthenes in the third century B.C.E. In Greek, geo- means “earth” and -graphy means “to write.” Using geography, Eratosthenes and other Greeks developed an understanding of where their homeland was located in relation to other places, what their own and other places were like, and how people and environments were distributed. These concerns have been central to geography ever since.Of course, the Greeks  China. This period of time between the 15th and 17th centuries is known in the West as the Age of Exploration or the Age of Discovery.With the dawn of the Age of Discovery, the study of geography regained popularity in Europe. The invention of the printing press in the mid-1400s helped spread geographic knowledge by making maps and charts widely available. Improvements in shipbuilding and navigation facilitated more exploring, greatly improving the accuracy of maps and geographic information.Greater geographic understanding allowed European powers to extend their global influence. During the Age of Discovery, European nations established colonies around the world. Improved transportation, communication and navigational technology allowed countries such as the United Kihich nations trade with other nations, and what resources are exchanged. Philosophers analyze the responsibility people have to take care of Earth.Emergence of Modern GeographySome people have trouble understanding the complete scope of the discipline of geography because geography is interdisciplinary, meaning that it is not defined by one particular topic. Instead, geography is concerned with many different topics—people, culture, politics, settlements, plants, landforms and much more. Geography asks spatial questions—how and why things are distributed or arranged in particular ways on Earth’s surface. It looks at these differe"
 
-def occurance_of_words(para):
-  dict={}
-  drops=["A","a","the","The","is","Is","of","Of","and",
-         "And","to","To","in","In","for","For","on","are",
-         "On","with","With","that","That","by","By","this","They","These"," "]
-  words=para.split()
-  for word in words:
-    if word in drops:
-      continue
-    if word in dict:
-      dict[word]+=1
-    else:
-      dict[word]=1
-  return dict
+# def occurance_of_words(para):
+#   dict={}
+#   drops=["A","a","the","The","is","Is","of","Of","and",
+#          "And","to","To","in","In","for","For","on","are",
+#          "On","with","With","that","That","by","By","this","They","These"," "]
+#   words=para.split()
+#   for word in words:
+#     if word in drops:
+#       continue
+#     if word in dict:
+#       dict[word]+=1
+#     else:
+#       dict[word]=1
+#   return dict
 
-print(occurance_of_words(para))
+# print(occurance_of_words(para))
+
+# class Book:
+#   def __init__(self, name, author, copies):
+#       self.name = name
+#       self.author = author
+#       self.copies = copies
+
+#   def __str__(self):
+#       return f"Book: {self.name}, Author: {self.author}, Copies Available: {self.copies}"
+
+
+# class Library:
+#   def __init__(self):
+#       self.books = []  
+
+#   def add_book(self, name, author, copies):
+#       for book in self.books:
+#           if book.name() == name() and book.author() == author():
+#               book.copies += copies
+#               print(f"Added {copies} more copies of '{name}'.")
+#               return
+#       new_book = Book(name, author, copies)
+#       self.books.append(new_book)
+#       print(f"Book '{name}' by {author} added with {copies} copies.")
+
+#   def delete_book(self, name, author):
+#       for book in self.books:
+#           if book.name() == name() and book.author() == author():
+#               self.books.remove(book)
+#               print(f"Book '{name}' by {author} removed from the library.")
+#               return
+#       print(f"Book '{name}' by {author} not found in the library.")
+
+#   def search_book(self, name):
+#       for book in self.books:
+#           if book.name() == name():
+#               print(book)
+#               return
+#       print(f"Book '{name}' not found in the library.")
+
+#   def allocate_book(self, name):
+#       for book in self.books:
+#           if book.name() == name():
+#               if book.copies > 0:
+#                   book.copies -= 1
+#                   print(f"Book '{name}' has been allocated. Copies left: {book.copies}.")
+#               else:
+#                   print(f"Book '{name}' is currently out of stock.")
+#               return
+#       print(f"Book '{name}' not found in the library.")
+
+#   def deallocate_book(self, name):
+#       for book in self.books:
+#           if book.name() == name():
+#               book.copies += 1
+#               print(f"Book '{name}' has been returned. Copies available: {book.copies}.")
+#               return
+#       print(f"Book '{name}' not found in the library.")
+
+#   def show_books(self):
+#       if not self.books:
+#           print("No books are currently available in the library.")
+#       else:
+#           print("\nBooks in the Library:")
+#           for book in self.books:
+#               print(book)
+
+
+# library = Library()
+# library.add_book("Python Programming", "John Doe", 5)
+# library.add_book("Data Structures", "Jane Smith", 3)
+# library.add_book("Machine Learning", "Andrew Ng", 2)
+# library.show_books()
+# library.search_book("Python Programming")
+# library.allocate_book("Python Programming")
+# library.allocate_book("Machine Learning")
+# library.show_books()
+# library.deallocate_book("Python Programming")
+# library.delete_book("Data Structures", "Jane Smith")
+# library.show_books()
+# class Book:
+#   def __init__(self, name, author, copies):
+#       self.name = name
+#       self.author = author
+#       self.copies = copies
+
+#   def __str__(self):
+#       return " Book:" +self.name + \
+#              " Author:" + self.author + \
+#              " Copies Available:"+str(self.copies) 
+
+
+# class Library:
+#   def __init__(self):
+#       self.books = [] 
+
+#   def add_book(self, name, author, copies):
+
+#       for book in self.books:
+#           if book.name.lower() == name.lower() and book.author.lower() == author.lower():
+#               book.copies += copies
+#               print("Added ",book.copies, "more copies of", book.name)
+#               return
+
+#       new_book = Book(name, author, copies)
+#       self.books.append(new_book)
+#       print("Book", new_book.name," by" ,new_book.author," added with", new_book.copies,    
+#             "copies.")
+
+#   def delete_book(self, name, author):
+#       for book in self.books:
+#           if book.name.lower() == name.lower() and book.author.lower() == author.lower():
+#               self.books.remove(book)
+#               print("Book", book.name, "by", book.author, "removed from the library.")
+#               return
+#       print("Book", book.name, "by", book.author, "not found in the library.")
+
+#   def search_book(self, name):
+#       for book in self.books:
+#           if book.name.lower() == name.lower():
+#               print(book)
+#               return
+#       print("Book", book.name, "not found in the library.")
+
+#   def allocate_book(self, name):
+#       for book in self.books:
+#           if book.name.lower() == name.lower():
+#               if book.copies > 0:
+#                   book.copies -= 1
+#                   print(" Book:", book.name, "has been allocated.Copies left:",book.copies)
+#               else:
+#                   print(" Book", book.name, "is currently out of stock.")
+#               return
+#       print(" Book" ,book.name," not found in the library.")
+
+#   def deallocate_book(self, name):
+#       for book in self.books:
+#           if book.name.lower() == name.lower():
+#               book.copies += 1
+#               print(" Book:",book.name, "has been returned. Copies available:",book.copies)
+#               return
+#       print(" Book", book.name, "not found in the library.")
+
+#   def show_books(self):
+#       if not self.books:
+#           print("No books are currently available in the library.")
+#       else:
+#           print("\nBooks in the Library:")
+#           for book in self.books:
+#               print(book)
+
+
+# # Example Usage
+# if __name__ == "__main__":
+#   library = Library()
+#   library.add_book("Python Programming", "A.D", 5)
+#   library.add_book("Data Structures", "K.B", 3)
+#   library.show_books()
+#   library.search_book("Python Programming")
+#   library.allocate_book("Python Programming")
+#   library.show_books()
+#   library.deallocate_book("Python Programming")
+#   library.delete_book("Data Structures", "K.B")
+#   library.show_books()
