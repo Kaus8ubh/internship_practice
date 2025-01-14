@@ -70,15 +70,13 @@ class Library:
               print(book)
 
 
-# Example Usage
-if __name__ == "__main__":
-  library = Library()
-  library.add_book("Python Programming", "A.D", 5)
-  library.add_book("Data Structures", "K.B", 3)
-  library.show_books()
-  library.search_book("Python Programming")
-  library.allocate_book("Python Programming")
-  library.show_books()
-  library.deallocate_book("Python Programming")
-  library.delete_book("Data Structures", "K.B")
-  library.show_books()
+library = Library()
+library.add_book("Python Programming", "A.D", 5)
+library.add_book("Data Structures", "K.B", 3)
+library.show_books()
+library.search_book("Python Programming")
+library.allocate_book("Python Programming")
+library.show_books()
+library.deallocate_book("Python Programming")
+library.delete_book("Data Structures", "K.B")
+library.show_books()
